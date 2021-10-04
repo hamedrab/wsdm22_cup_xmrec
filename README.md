@@ -3,7 +3,7 @@ This repository provides a sample code for training a simple Generalized Matrix 
 
 We highly recommend following the structure of our sample code for your own model design, as we ask every team to submit their code along with their submission and share the implementation with the organizers. In the case we are not able to reproduce your results, your submission will be removed from our leaderboard. Please reach out to us if you encounter any problem with using this code or any other questions / feedback. 
 
-
+For further information please refer to the competition website: [WSDM_2022_CUP](https://github.com/cvangysel/pytrec_evaln)
 
 ## Requirements:
 We use conda for our experimentations. You can use `environment.yml` to create the environment (use `conda env create -f environment.yml`) or install the below list of requirements on your own environment. 
@@ -39,5 +39,9 @@ After training your model, the scripts prints the directories of model and index
     --test: test_t1_s1-s2_toytest.tsv
     
 You will need to upload the test run output file (.tsv file format) for both target markets to Codalab for our evaluation and leaderboard entry. This output file contains ranked items for each user with their score. Our final evaluation metric is based on nDCG@10 on both target markets.   
+
+
+
+## DATA
 
 

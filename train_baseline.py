@@ -4,15 +4,17 @@ import torch
 from torch.autograd import Variable
 from torch.utils.data import DataLoader, Dataset, ConcatDataset
 
-from model import Model
-from utils import *
-from data import *
-
 import os
 import json
 import resource
 import sys
 import pickle
+
+sys.path.insert(1, 'src')
+from model import Model
+from utils import *
+from data import *
+
 
 
 
@@ -61,8 +63,10 @@ def main():
     ## Target Market data
     ############
     my_id_bank = Central_ID_Bank()
-
-    tgt_train_data_dir = os.path.join(args.data_dir, args.tgt_market, 'train.tsv')
+    
+    train_file_names = 'train_5core.tsv' #'train.tsv' for the original data loading
+    
+    tgt_train_data_dir = os.path.join(args.data_dir, args.tgt_market, train_file_names)
     tgt_train_ratings = pd.read_csv(tgt_train_data_dir, sep='\t')
 
     print(f'Loading target market {args.tgt_market}: {tgt_train_data_dir}')
@@ -81,7 +85,7 @@ def main():
     if 'none' not in src_market_list:
         cur_task_index = 1
         for cur_src_market in src_market_list:
-            cur_src_data_dir = os.path.join(args.data_dir, cur_src_market, 'train.tsv')
+            cur_src_data_dir = os.path.join(args.data_dir, cur_src_market, train_file_names)
             print(f'Loading {cur_src_market}: {cur_src_data_dir}')
             cur_src_train_ratings = pd.read_csv(cur_src_data_dir, sep='\t')
             cur_src_task_generator = TaskGenerator(cur_src_train_ratings, my_id_bank)
