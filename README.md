@@ -21,21 +21,21 @@ We use conda for our experimentations. You can use `environment.yml` to create t
 
 Here is a sample train script using two source markets:
 
-    python train_baseline.py --tgt_market de --src_markets uk-fr --tgt_market_valid DATA/de/valid_run.tsv --tgt_market_test DATA/de/test_run.tsv --exp_name toytest --num_epoch 5 --cuda
+    python train_baseline.py --tgt_market t1 --src_markets s1-s2 --tgt_market_valid DATA/t1/valid_run.tsv --tgt_market_test DATA/t1/test_run.tsv --exp_name toytest --num_epoch 5 --cuda
     
 Here is a sampe train script using zero source market (only train on the target data):
 
-    python train_baseline.py --tgt_market de --src_markets none --tgt_market_valid DATA/de/valid_run.tsv --tgt_market_test DATA/de/test_run.tsv --exp_name toytest --num_epoch 5 --cuda
+    python train_baseline.py --tgt_market t1 --src_markets none --tgt_market_valid DATA/t1/valid_run.tsv --tgt_market_test DATA/t1/test_run.tsv --exp_name toytest --num_epoch 5 --cuda
 
 
 After training you model, the scripts prints the directories of model and index checkpoints as well as the run files for the validation and test data as below. You can load the model for other usage and evaluate the validation run file. See the notebook `tutorial.ipynb` for a sample code on these. 
 
     Model is trained! and saved at:
-    --model: checkpoints/de_uk-fr_toytest.model
-    --id_bank: 
+    --model: checkpoints/t1_s1-s2_toytest.model
+    --id_bank: checkpoints/t1_s1-s2_toytest.pickle
     Run output files:
-    --validation: valid_de_uk-fr_toytest.tsv
-    --test: test_de_uk-fr_toytest.tsv
+    --validation: valid_t1_s1-s2_toytest.tsv
+    --test: test_t1_s1-s2_toytest.tsv
     
 You will need to upload test run output file (.tsv file format) for both target markets to Codalab for our evluation and leaderboard entry. This output file contains ranked items for each user with their score. Our final evaluation metric is based on nDCG@10 on both target markets.   
 
