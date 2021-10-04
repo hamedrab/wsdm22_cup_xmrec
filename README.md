@@ -1,5 +1,5 @@
 # WSDM 2022 CUP - Cross-Market Recommendation - Starter Kit 
-This repository provides a sample code for training a simple Generalized Matrix Factorization (GMF) model over several markets. We provide loading data from zero to a few source markets to augment the target market data, which can help the recommendation performance in the target market. Please read through this note and take a look at tutorial_evaluation.ipnyb for understanding our expectations.
+This repository provides a sample code for training a simple Generalized Matrix Factorization (GMF) model over several markets. We provide loading data from zero to a few source markets to augment the target market data, which can help the recommendation performance in the target market. Please read through this note and take a look at `train_baseline.py` and `tutorial.ipynb` for understanding our expectations.
 
 We highly recommend following the structure of our sample code for your own model design, as we ask every team to submit their code along with their submission and share the implementation with the organizers. In the case we are not able to reproduce your results, your submission will be removed from our leaderboard. Please reach out to us if you encounter any problem with using this code or any other questions / feedback. 
 
