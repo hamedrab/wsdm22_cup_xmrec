@@ -3,7 +3,7 @@ This repository provides a sample code for training a simple Generalized Matrix 
 
 We highly recommend following the structure of our sample code for your own model design, as we ask every team to submit their code along with their submission and share the implementation with the organizers. In the case we are not able to reproduce your results, your submission will be removed from our leaderboard. Please reach out to us if you encounter any problem with using this code or any other questions / feedback. 
 
-For further information please refer to the competition website: [WSDM_2022_CUP](https://github.com/cvangysel/pytrec_evaln)
+For further information please refer to the competition website: [WSDM_2022_CUP](https://xmrec.github.io/wsdmcup/)
 
 ## Requirements:
 We use conda for our experimentations. You can use `environment.yml` to create the environment (use `conda env create -f environment.yml`) or install the below list of requirements on your own environment. 
