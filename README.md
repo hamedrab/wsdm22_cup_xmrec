@@ -43,5 +43,5 @@ You will need to upload the test run output file (.tsv file format) for both tar
 
 
 ## DATA
-
+The `DATA` folder in this repository contains the two target markets data (train ratings, validation run and qrel, and test run) that we conduct our evaluation on them and three source markets that you can use as desired to augment with the target markets. It is ultimately your choice on how to use the provided data (or any other additional data, if you will) to improve the recommendation performance on target markets. 
 
