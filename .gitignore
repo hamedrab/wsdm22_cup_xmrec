@@ -1,6 +1,6 @@
 *.sh
 *.out
-checkpoints/**
+# checkpoints/**
 **/.ipynb_checkpoints/**
 
 # Byte-compiled / optimized / DLL files
