@@ -27,7 +27,7 @@ def create_arg_parser():
     parser.add_argument('--tgt_market', help='specify a target market name', type=str, default='t1') 
     parser.add_argument('--src_markets', help='specify none ("none") or a few source markets ("-" seperated) to augment the data for training', type=str, default='s1-s2') 
     
-    parser.add_argument('--tgt_market_valid', help='specify validation run file for target market', type=str, default='DATA/t1/valid_run.tsv') 
+    parser.add_argument('--tgt_market_valid', help='specify validation run file for target market', type=str, default='DATA/t1/valid_run.tsv')
     parser.add_argument('--tgt_market_test', help='specify test run file for target market', type=str, default='DATA/t1/test_run.tsv') 
     
     parser.add_argument('--exp_name', help='name the experiment',type=str, default='baseline_toy')
