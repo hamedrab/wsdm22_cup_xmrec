@@ -11,7 +11,7 @@ We use conda for our experimentations. You can use `environment.yml` to create t
 - python 3.7 
 - pandas & numpy (pandas-1.3.3, numpy-1.21.2)
 - torch==1.9.1
-- [pytrec_eval](https://github.com/cvangysel/pytrec_evaln)
+- [pytrec_eval](https://github.com/cvangysel/pytrec_eval)
 
 
 

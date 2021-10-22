@@ -32,6 +32,8 @@ def create_arg_parser():
     
     parser.add_argument('--exp_name', help='name the experiment',type=str, default='baseline_toy')
     
+    parser.add_argument('--train_data_file', help='the file name of the train data',type=str, default='train_5core.tsv') #'train.tsv' for the original data loading
+    
     
     # MODEL arguments 
     parser.add_argument('--num_epoch', type=int, default=25, help='number of epoches')
@@ -64,7 +66,7 @@ def main():
     ############
     my_id_bank = Central_ID_Bank()
     
-    train_file_names = 'train_5core.tsv' #'train.tsv' for the original data loading
+    train_file_names = args.train_data_file # 'train_5core.tsv', 'train.tsv' for the original data loading
     
     tgt_train_data_dir = os.path.join(args.data_dir, args.tgt_market, train_file_names)
     tgt_train_ratings = pd.read_csv(tgt_train_data_dir, sep='\t')
