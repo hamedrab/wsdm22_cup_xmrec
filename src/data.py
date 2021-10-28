@@ -160,23 +160,26 @@ class TaskGenerator(object):
         """
 
         self.id_index_bank = id_index_bank
-        self.ratings = train_data
         
-        # get item and user pools
-        self.user_pool_ids = set(self.ratings['userId'].unique())
-        self.item_pool_ids = set(self.ratings['itemId'].unique())
-        
-        # replace ids with corrosponding index for both users and items
-        self.ratings['userId'] = self.ratings['userId'].apply(lambda x: self.id_index_bank.query_user_index(x) )
-        self.ratings['itemId'] = self.ratings['itemId'].apply(lambda x: self.id_index_bank.query_item_index(x) )
-        
-        # get item and user pools (indexed version)
-        self.user_pool = set(self.ratings['userId'].unique())
-        self.item_pool = set(self.ratings['itemId'].unique())
-        
-        # create negative item samples
-        self.negatives_train = self._sample_negative(self.ratings)
-        self.train_ratings = self.ratings
+        # None for evaluation purposes
+        if train_data is not None: 
+            self.ratings = train_data
+
+            # get item and user pools
+            self.user_pool_ids = set(self.ratings['userId'].unique())
+            self.item_pool_ids = set(self.ratings['itemId'].unique())
+
+            # replace ids with corrosponding index for both users and items
+            self.ratings['userId'] = self.ratings['userId'].apply(lambda x: self.id_index_bank.query_user_index(x) )
+            self.ratings['itemId'] = self.ratings['itemId'].apply(lambda x: self.id_index_bank.query_item_index(x) )
+
+            # get item and user pools (indexed version)
+            self.user_pool = set(self.ratings['userId'].unique())
+            self.item_pool = set(self.ratings['itemId'].unique())
+
+            # create negative item samples
+            self.negatives_train = self._sample_negative(self.ratings)
+            self.train_ratings = self.ratings
         
     
     def _sample_negative(self, ratings):
