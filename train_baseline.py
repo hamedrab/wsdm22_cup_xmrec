@@ -121,7 +121,7 @@ def main():
     test_run_mf = mymodel.predict(tgt_test_dataloader)
     test_output_file = f'test_{args.tgt_market}_{args.src_markets}_{args.exp_name}.tsv'
     print(f'--test: {test_output_file}')
-    write_run_file(valid_run_mf, test_output_file)
+    write_run_file(test_run_mf, test_output_file)
     
     print('Experiment finished successfully!')
     
